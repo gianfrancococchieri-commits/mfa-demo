@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mfa-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mfa-demo
+  template:
+    metadata:
+      labels:
+        app: mfa-demo
+    spec:
+      containers:
+        - name: mfa-demo
+          image: <ACCOUNT>.dkr.ecr.<REGION>.amazonaws.com/mfa-demo:1.0
+          ports:
+            - containerPort: 3000
