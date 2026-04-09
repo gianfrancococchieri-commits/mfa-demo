@@ -5,7 +5,6 @@ const { totp } = require('otplib');
 
 const app = express();
 
-// === MFA CONFIG ===
 const TOTP_SECRET = 'JBSWY3DPEHPK3PXP';
 totp.options = { step: 30, digits: 6 };
 
